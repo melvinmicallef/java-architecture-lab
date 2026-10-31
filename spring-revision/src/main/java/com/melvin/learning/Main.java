@@ -1,12 +1,14 @@
 package com.melvin.learning;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 public class Main {
 
-    static void main() {
-        IO.println(String.format("Hello and welcome!"));
+    public static void main(final String[] args) {
+        try (final var context = new AnnotationConfigApplicationContext(AppConfig.class)) {
+            final var service = context.getBean(SessionService.class);
 
-        for (int i = 1; i <= 5; i++) {
-            IO.println("i = " + i);
+            System.out.println("3. " + service.describeSession("session-1"));
         }
     }
 }
