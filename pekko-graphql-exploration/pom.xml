@@ -28,6 +28,7 @@
     </scm>
     <properties>
         <java.version>25</java.version>
+        <pekko.version>1.7.1</pekko.version>
     </properties>
     <dependencies>
         <dependency>
@@ -38,12 +39,24 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webmvc</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.apache.pekko</groupId>
+            <artifactId>pekko-actor-typed_2.13</artifactId>
+            <version>${pekko.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.pekko</groupId>
+            <artifactId>pekko-actor-testkit-typed_2.13</artifactId>
+            <version>${pekko.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--TEST DEPENDENCIES-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-graphql-test</artifactId>
