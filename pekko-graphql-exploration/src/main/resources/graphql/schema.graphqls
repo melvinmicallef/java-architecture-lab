@@ -1,0 +1,19 @@
+# Current session credits.
+type Balance {
+    credits: Int!
+}
+
+# Outcome of attempting a bet.
+type BetResult {
+    accepted: Boolean!
+    balance: Int!
+    reason: String
+}
+
+type Query {
+    balance: Balance!
+}
+
+type Mutation {
+    placeBet(amount: Int!): BetResult!
+}
